@@ -5,6 +5,8 @@ import com.springboot.LMS_Backend.repository.TeacherRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TeacherServiceImplementation implements TeacherService {
 
@@ -14,5 +16,10 @@ public class TeacherServiceImplementation implements TeacherService {
     @Override
     public Teacher saveTeacher(Teacher teacher) {
         return teacherRespository.save(teacher);
+    }
+
+    @Override
+    public List<Teacher> getAllteachers() {
+        return teacherRespository.findAll();
     }
 }

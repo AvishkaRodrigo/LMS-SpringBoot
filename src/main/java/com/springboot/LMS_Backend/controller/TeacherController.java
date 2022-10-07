@@ -3,13 +3,13 @@ package com.springboot.LMS_Backend.controller;
 import com.springboot.LMS_Backend.Service.TeacherService;
 import com.springboot.LMS_Backend.model.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/teacher")
+@CrossOrigin
 public class TeacherController {
 
     @Autowired
@@ -21,4 +21,8 @@ public class TeacherController {
         return "new teacher added!";
     }
 
+    @GetMapping("/teachers")
+    public List<Teacher> getAllTeachers(){
+        return teacherService.getAllteachers();
+    }
 }
