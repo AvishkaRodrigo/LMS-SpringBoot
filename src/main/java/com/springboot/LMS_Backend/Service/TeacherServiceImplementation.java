@@ -15,11 +15,13 @@ public class TeacherServiceImplementation implements TeacherService {
 
     @Override
     public Teacher saveTeacher(Teacher teacher) {
+
         return teacherRespository.save(teacher);
     }
 
     @Override
     public List<Teacher> getAllteachers() {
+
         return teacherRespository.findAll();
     }
 }

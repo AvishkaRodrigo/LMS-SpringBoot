@@ -21,6 +21,8 @@ public class TeacherController {
         return "new teacher added!";
     }
 
+
+
     @GetMapping("/teachers")
     public List<Teacher> getAllTeachers(){
         return teacherService.getAllteachers();
