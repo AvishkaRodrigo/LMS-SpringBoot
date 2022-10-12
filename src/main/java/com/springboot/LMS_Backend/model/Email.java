@@ -54,7 +54,7 @@ public class Email {
         return text;
     }
 
-    public void setText(String body) {
+    public void setText (String body) {
         this.text = body;
     }
 }
