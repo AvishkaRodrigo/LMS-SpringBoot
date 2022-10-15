@@ -19,8 +19,8 @@ public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int teacher_id;
-    private String fName;
-    private String lName;
+    private String fname;
+    private String lname;
     private String email;
     private String password;
     private String mobile;

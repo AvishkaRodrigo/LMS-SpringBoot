@@ -38,7 +38,7 @@ public class Email {
         return toEmail;
     }
 
-    public void setToEmail(String toEmail[]) {
+    public void setToEmail(String[] toEmail) {
         this.toEmail = toEmail;
     }
 
