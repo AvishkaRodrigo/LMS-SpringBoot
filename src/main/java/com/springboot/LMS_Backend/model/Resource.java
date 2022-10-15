@@ -23,16 +23,8 @@ public class Resource {
     private String addedOn;
     private String link;
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn(name = "course_id", nullable = true)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "courseID", nullable = true,referencedColumnName = "courseID")
     private Course course;
-
-    public Resource(int resourceID, String name, String addedOn, String link) {
-        this.resourceID = resourceID;
-        this.name = name;
-        this.addedOn = addedOn;
-        this.link = link;
-    }
-
 
 }

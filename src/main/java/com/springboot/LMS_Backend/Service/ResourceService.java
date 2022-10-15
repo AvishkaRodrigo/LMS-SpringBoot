@@ -11,4 +11,6 @@ public interface ResourceService {
     List<Resource> getAllResources();
 
     void deleteResource(int id);
+
+    Resource saveResourceToCourse(int resourceID,int courseID);
 }

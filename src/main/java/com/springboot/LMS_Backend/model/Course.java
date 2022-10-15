@@ -21,17 +21,16 @@ public class Course {
     private int courseID;
     private String courseName;
 
+
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "teacher_id", nullable = true)
     private Teacher teacher;
 
     @OneToMany(mappedBy = "course")
-    private Set<Resource> resources;
+    private Set<Resource> resources = new HashSet<>();
 
     @JsonIgnore
     @ManyToMany(mappedBy = "courses")
-     Set<Student> students = new HashSet<>();
-
-
+    Set<Student> students = new HashSet<>();
 
 }

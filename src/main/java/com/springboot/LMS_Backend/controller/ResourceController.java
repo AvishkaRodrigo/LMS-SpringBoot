@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/resource")
@@ -16,7 +17,7 @@ public class ResourceController {
     @Autowired
     private ResourceService resourceService;
 
-    @GetMapping("/")
+    @GetMapping("/all")
     public List<Resource> getAll(){
         return resourceService.getAllResources();
     }
@@ -30,6 +31,14 @@ public class ResourceController {
     @DeleteMapping("/")
     public HashMap<String, String> delete(@RequestBody Resource resource){
         resourceService.deleteResource(resource.getResourceID());
+        HashMap<String, String> map = new HashMap<>();
+        map.put("message","OK");
+        return map;
+    }
+
+    @PostMapping("/linkToCourse")
+    public HashMap<String, String> link(@RequestBody Map<String, Integer> json){
+        resourceService.saveResourceToCourse(json.get("resourceID"),json.get("courseID"));
         HashMap<String, String> map = new HashMap<>();
         map.put("message","OK");
         return map;
