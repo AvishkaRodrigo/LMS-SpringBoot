@@ -1,11 +1,18 @@
 package com.springboot.LMS_Backend.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Teacher {
 
     @Id
@@ -13,42 +20,11 @@ public class Teacher {
     private int id;
     private String fName;
     private String lName;
-    private String email;
 
-    public Teacher() {
-    }
+    @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private Set<Course> courses;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getfName() {
-        return fName;
-    }
-
-    public void setfName(String fName) {
-        this.fName = fName;
-    }
-
-    public String getlName() {
-        return lName;
-    }
-
-    public void setlName(String lName) {
-        this.lName = lName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
 
 

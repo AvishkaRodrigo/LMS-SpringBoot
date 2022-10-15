@@ -10,18 +10,13 @@ import org.springframework.context.event.EventListener;
 @SpringBootApplication
 public class LearningManagementSystemApplication {
 
-//	@Autowired
-//	private EmailSenderServiceImplementation service;
 
 	public static void main(String[] args) {
 
 		SpringApplication.run(LearningManagementSystemApplication.class, args);
+
 	}
 
-//	@EventListener(ApplicationReadyEvent.class)
-//	public void triggerMail(){
-//
-//
-//	}
+
 
 }
