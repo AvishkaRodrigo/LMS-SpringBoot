@@ -1,7 +1,5 @@
 package com.springboot.LMS_Backend.Service;
 
-import com.springboot.LMS_Backend.model.Email;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -18,7 +16,7 @@ public class EmailSenderServiceImplementation implements EmailSenderService {
     }
 
     @Override
-    public void sendEmail(String toEmail, String subject, String text){
+    public void sendEmail(String[] toEmail, String subject, String text){
         SimpleMailMessage message = new SimpleMailMessage();
 
         message.setFrom("institute.akura@gmail.com");
@@ -26,7 +24,15 @@ public class EmailSenderServiceImplementation implements EmailSenderService {
         message.setText(text);
         message.setSubject(subject);
 
-        mailSender.send(message);
+//        String[] members = {"avish.rodrigo11@gmail.com", "avishkachathuranga98@gmail.com"};
+
+
+        for(String to : toEmail){
+            message.setTo(to);
+            System.out.println(to);
+            mailSender.send(message);
+        }
+
         System.out.println("Sent!");
 
     }

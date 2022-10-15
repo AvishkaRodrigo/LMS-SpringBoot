@@ -15,6 +15,8 @@ import java.util.NoSuchElementException;
 @CrossOrigin
 public class TeacherController {
 
+//    @Autowired
+//    private Teacher teacher;
     @Autowired
     private TeacherService teacherService;
     @PostMapping("/add")
@@ -54,4 +56,12 @@ public class TeacherController {
         teacherService.deleteTeacher(id);
         return "Teacher info with id "+ id + " has deleted!";
     }
+
+//    @PutMapping("/{teacher_id}/course/{course_id}")
+//    public Teacher assignCourseToTeacher(
+//            @PathVariable Integer teacher_id,
+//            @PathVariable Integer course_id
+//    ){
+//        return teacherService.assignProjectToTeacher(teacher_id,course_id);
+//    }
 }

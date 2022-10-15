@@ -1,11 +1,13 @@
 package com.springboot.LMS_Backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -30,6 +32,8 @@ public class Course {
     @ManyToMany(mappedBy = "courses")
     private Set<Student> students;
 
-
+//     @JsonIgnore
+//     @ManyToMany(mappedBy = "conductedCourses")
+//     private Set<Teacher> teacherSet = new HashSet<>();
 
 }

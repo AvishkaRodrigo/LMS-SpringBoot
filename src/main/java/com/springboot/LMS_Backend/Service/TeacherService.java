@@ -20,4 +20,5 @@ public interface TeacherService {
 
     public void deleteTeacher(Integer id);
 
+//    public Teacher assignProjectToTeacher(Integer teacher_id, Integer course_id);
 }
