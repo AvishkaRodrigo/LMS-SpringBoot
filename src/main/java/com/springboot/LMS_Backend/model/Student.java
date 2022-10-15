@@ -1,9 +1,7 @@
 package com.springboot.LMS_Backend.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Student {
@@ -17,6 +15,13 @@ public class Student {
     private String email;
     private String gender;
     private String password;
+
+    @ManyToMany
+    @JoinTable(
+            name = "student_course",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id"))
+    private Set<Course> courses;
 
     public Student() {
     }
