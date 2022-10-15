@@ -5,7 +5,9 @@ import com.springboot.LMS_Backend.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/student")
@@ -24,5 +26,13 @@ public class StudentController {
     @GetMapping("/students")
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
+    }
+
+    @PostMapping("/enroll")
+    public Map<String, String> getAllStudents(@RequestBody Map<String, Integer> json) {
+        studentService.enrollInCourse(json.get("studentID"),json.get("courseID"));
+        HashMap<String, String> map = new HashMap<>();
+        map.put("message","OK");
+        return map;
     }
 }
