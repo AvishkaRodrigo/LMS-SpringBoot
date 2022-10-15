@@ -8,7 +8,7 @@ public interface ResourceService {
 
     Resource saveResource(Resource resource);
 
-    List<Resource> getAllResourcesOfCourse(int id);
+    List<Resource> getAllResources();
 
     void deleteResource(int id);
 }

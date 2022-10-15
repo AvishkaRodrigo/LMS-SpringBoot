@@ -1,9 +1,18 @@
 package com.springboot.LMS_Backend.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Resource {
 
     @Id
@@ -20,41 +29,6 @@ public class Resource {
         this.resourceID = resourceID;
         this.name = name;
         this.addedOn = addedOn;
-        this.link = link;
-    }
-
-    public Resource() {
-    }
-
-    public int getResourceID() {
-        return resourceID;
-    }
-
-    public void setResourceID(int resourceID) {
-        this.resourceID = resourceID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddedOn() {
-        return addedOn;
-    }
-
-    public void setAddedOn(String addedOn) {
-        this.addedOn = addedOn;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
         this.link = link;
     }
 

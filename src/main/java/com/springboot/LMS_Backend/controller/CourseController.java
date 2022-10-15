@@ -15,7 +15,7 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-    @PostMapping("/add")
+    @PostMapping("/")
     public HashMap<String, String> add(@RequestBody Course course){
         courseService.saveCourse(course);
         HashMap<String, String> map = new HashMap<>();
