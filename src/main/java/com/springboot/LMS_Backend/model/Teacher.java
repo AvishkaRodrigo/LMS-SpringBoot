@@ -21,6 +21,10 @@ public class Teacher {
     private int teacher_id;
     private String fName;
     private String lName;
+    private String email;
+    private String password;
+    private String mobile;
+
 
 //    @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY,
 //            cascade = CascadeType.ALL)
