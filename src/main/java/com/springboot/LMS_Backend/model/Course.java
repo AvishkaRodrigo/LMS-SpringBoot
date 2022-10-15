@@ -1,5 +1,6 @@
 package com.springboot.LMS_Backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,10 +25,10 @@ public class Course {
     @JoinColumn(name = "teacher_id", nullable = true)
     private Teacher teacher;
 
-    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "course")
     private Set<Resource> resources;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "courses")
      Set<Student> students = new HashSet<>();
 

@@ -1,5 +1,6 @@
 package com.springboot.LMS_Backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ public class Resource {
     private String name;
     private String addedOn;
     private String link;
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "course_id", nullable = true)
     private Course course;
