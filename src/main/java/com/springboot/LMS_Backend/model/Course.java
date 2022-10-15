@@ -31,6 +31,13 @@ public class Course {
 
     @JsonIgnore
     @ManyToMany(mappedBy = "courses")
+//    private Set<Student> students;
+
+//     @JsonIgnore
+//     @ManyToMany(mappedBy = "conductedCourses")
+//     private Set<Teacher> teacherSet = new HashSet<>();
+
     Set<Student> students = new HashSet<>();
+
 
 }

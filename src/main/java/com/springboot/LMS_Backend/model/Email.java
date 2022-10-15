@@ -12,14 +12,14 @@ public class Email {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int emailid;
 
-    private String toEmail;
+    private String[] toEmail;
     private String subject;
     private String text;
 
     public Email() {
     }
 
-    public Email(String toEmail, String subject, String text) {
+    public Email(String[] toEmail, String subject, String text) {
         this.toEmail = toEmail;
         this.subject = subject;
         this.text = text;
@@ -34,11 +34,11 @@ public class Email {
     }
 
 
-    public String getToEmail() {
+    public String[] getToEmail() {
         return toEmail;
     }
 
-    public void setToEmail(String toEmail) {
+    public void setToEmail(String toEmail[]) {
         this.toEmail = toEmail;
     }
 
