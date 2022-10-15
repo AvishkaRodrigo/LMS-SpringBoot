@@ -1,5 +1,6 @@
 package com.springboot.LMS_Backend.Service;
 
+import com.springboot.LMS_Backend.model.Course;
 import com.springboot.LMS_Backend.model.Student;
 
 import java.util.List;
@@ -9,5 +10,5 @@ public interface StudentService {
 
     List<Student> getAllStudents();
 
-    void enrollInCourse(int studentID,int courseID);
+    Course enrollInCourse(int studentID, int courseID);
 }

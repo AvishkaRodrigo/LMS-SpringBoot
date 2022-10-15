@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -28,7 +29,7 @@ public class Course {
     private Set<Resource> resources;
 
     @ManyToMany(mappedBy = "courses")
-    private Set<Student> students;
+     Set<Student> students = new HashSet<>();
 
 
 

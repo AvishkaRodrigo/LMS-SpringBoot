@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
-        @Query(value = "INSERT INTO `student_course`(`student_id`, `course_id`) VALUES (:studentID,:courseID)",nativeQuery = true)
-        void enrollToCourse(@Param("studentID")int studentID,@Param("courseID")int courseID);
+
 }
