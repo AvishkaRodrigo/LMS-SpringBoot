@@ -12,8 +12,8 @@ public class Resource {
     private String name;
     private String addedOn;
     private String link;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "course_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "course_id", nullable = true)
     private Course course;
 
     public Resource(int resourceID, String name, String addedOn, String link) {
