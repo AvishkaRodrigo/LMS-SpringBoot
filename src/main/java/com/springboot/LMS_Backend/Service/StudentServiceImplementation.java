@@ -21,4 +21,10 @@ public class StudentServiceImplementation implements StudentService {
     public List<Student> getAllStudents(){
         return studentRepository.findAll();
     }
+
+
+    @Override
+    public void enrollInCourse(int studentID,int courseID) {
+         studentRepository.enrollToCourse(studentID,courseID);
+    }
 }

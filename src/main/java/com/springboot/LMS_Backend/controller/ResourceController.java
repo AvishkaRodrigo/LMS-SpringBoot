@@ -1,8 +1,6 @@
 package com.springboot.LMS_Backend.controller;
 
-
 import com.springboot.LMS_Backend.Service.ResourceService;
-import com.springboot.LMS_Backend.model.Course;
 import com.springboot.LMS_Backend.model.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +29,6 @@ public class ResourceController {
     }
     @DeleteMapping("/")
     public HashMap<String, String> delete(@RequestBody Resource resource){
-
         resourceService.deleteResource(resource.getResourceID());
         HashMap<String, String> map = new HashMap<>();
         map.put("message","OK");
