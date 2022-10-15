@@ -1,9 +1,7 @@
 package com.springboot.LMS_Backend.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Teacher {
@@ -13,8 +11,28 @@ public class Teacher {
     private int id;
     private String fName;
     private String lName;
+
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public Teacher(int id, String fName, String lName, String email, Set<Course> courses) {
+        this.id = id;
+        this.fName = fName;
+        this.lName = lName;
+        this.email = email;
+        this.courses = courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
+    }
+
     private String email;
 
+    @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private Set<Course> courses;
     public Teacher() {
     }
 
