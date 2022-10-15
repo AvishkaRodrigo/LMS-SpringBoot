@@ -24,4 +24,14 @@ public class TeacherServiceImplementation implements TeacherService {
 
         return teacherRespository.findAll();
     }
+
+    @Override
+    public Teacher getTeacherById(Integer id) {
+        return teacherRespository.findById(id).get();
+    }
+
+    @Override
+    public void deleteTeacher(Integer id) {
+        teacherRespository.deleteById(id);
+    }
 }
