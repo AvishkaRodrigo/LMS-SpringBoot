@@ -1,10 +1,19 @@
 package com.springboot.LMS_Backend.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
 
     @Id
@@ -32,62 +41,4 @@ public class Student {
         this.courses = courses;
     }
 
-    public Student() {
-    }
-
-    public int getStudentID() {
-        return student_id;
-    }
-
-    public void setStudentID(int studentID) {
-        this.student_id = studentID;
-    }
-
-    public String getfName() {
-        return fName;
-    }
-
-    public void setfName(String fName) {
-        this.fName = fName;
-    }
-
-    public String getlName() {
-        return lName;
-    }
-
-    public void setlName(String lName) {
-        this.lName = lName;
-    }
-
-    public int getContactNumber() {
-        return contactNumber;
-    }
-
-    public void setContactNumber(int contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
