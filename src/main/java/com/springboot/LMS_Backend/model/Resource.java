@@ -1,10 +1,6 @@
 package com.springboot.LMS_Backend.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
+import javax.persistence.*;
 
 
 @Entity
@@ -16,6 +12,9 @@ public class Resource {
     private String name;
     private String addedOn;
     private String link;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "course_id", nullable = false)
+    private Course course;
 
     public Resource(int resourceID, String name, String addedOn, String link) {
         this.resourceID = resourceID;
