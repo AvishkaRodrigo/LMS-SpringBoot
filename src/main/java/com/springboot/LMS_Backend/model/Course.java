@@ -20,6 +20,7 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int courseID;
     private String courseName;
+    private String description;
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
