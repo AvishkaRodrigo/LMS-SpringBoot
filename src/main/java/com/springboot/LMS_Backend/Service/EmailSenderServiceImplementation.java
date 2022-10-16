@@ -20,7 +20,7 @@ public class EmailSenderServiceImplementation implements EmailSenderService {
         SimpleMailMessage message = new SimpleMailMessage();
 
         message.setFrom("institute.akura@gmail.com");
-        message.setTo(toEmail);
+//        message.setTo(toEmail);
         message.setText(text);
         message.setSubject(subject);
 

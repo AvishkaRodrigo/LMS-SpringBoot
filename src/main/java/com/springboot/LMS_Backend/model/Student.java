@@ -19,11 +19,11 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int student_id;
-    private String fName;
-    private String lName;
+    private String f_name;
+    private String l_name;
     private int contactNumber;
     private String email;
-    private String gender;
+//    private String gender;
     private String password;
 
     @ManyToMany
